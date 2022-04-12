@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["Title"] = "List";
+}
+<style>
+    .container {
+        width: 80vw;
+        height: 90vh;
+        display: flex;
+    }
+    .JsonView {
+        width: 70%;
+        height: 80%;
+        border: 1px solid red;
+        display: block;
+    }
+    .ActioView {
+        display: inline-block;
+        width: 30%;
+        height: 80%;
+    }
+</style>
+<h1>@ViewBag.typename</h1>
+
+<div>
+    <hr />
+    <div class="container">
+        <textarea class="JsonView">   
+            @ViewBag.jsonstring
+        </textarea>
+        <div class="ActionView">
+            <form method="post" asp-action="GirlProfile">
+                    <input type="text" placeholder="Girl Name" name="girlName"> 
+                    <button type="submit">
+                        View Profile
+                    </button>
+            </form>            
+        </div>
+    </div>
+</div>
